@@ -3,6 +3,7 @@ Repository for Java course at UCU
 
 ### Different folders created for different projects during the Java course
 
+##### Task1 and Task2 located in small_tasks project
 
 ##### Parser located in rozetka_parser project
 ##### All data located in rozetka_parser/data folder (every csv file - different product)
