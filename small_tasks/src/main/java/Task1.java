@@ -13,7 +13,7 @@ public class Task1 {
             sum += value;
             product *= value;
         }
-        averageValue = sum / (float)n;
+        averageValue = sum / (float) n;
         System.out.println(String.valueOf(maxValue) + " " + String.valueOf(minValue) + " " + String.valueOf(averageValue)
                 + " " + String.valueOf(sum) + " " + String.valueOf(product));
     }
