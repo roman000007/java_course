@@ -9,10 +9,10 @@ public class CategoryPageParser extends PageParser {
         pages = getPageNumbers();
     }
 
-    public void getMostCommentedProduct() throws IOException {
+    public void parseCategoryPage() throws IOException {
         for(int i = 0; i < pages; i++) {
             ProductListPageParser prodListParser = new ProductListPageParser(url + "page=" + String.valueOf(i + 1));
-            maxProduct = prodListParser.getMostPopularProduct(maxProduct);
+            maxProduct = prodListParser.parseProductListPage(maxProduct);
         }
         if(maxProduct.comments > 0) {
             System.out.println("The most commented product " + maxProduct.name +

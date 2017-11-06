@@ -14,7 +14,7 @@ public class ProductPageParser extends PageParser {
     }
 
 
-    public Product getMostPopularProduct(Product maxProduct) throws IOException {
+    public Product parseProductPage(Product maxProduct) throws IOException {
         String product = url.substring(31, url.length() - 20);
         writer = new CSVWriter(new FileWriter("data/" + product + ".csv"), ',');
         int num = getPageNumbers();
@@ -34,7 +34,7 @@ public class ProductPageParser extends PageParser {
         int[] returned;
         for(int i = 0; i < num; i++) {
             ReviewsPageParser reviewsParser = new ReviewsPageParser(url + "page=" + String.valueOf(i + 1));
-            returned = reviewsParser.getStars(writer);
+            returned = reviewsParser.reviewsToCSV(writer);
             total += returned[0];
         }
         System.out.println(String.valueOf(total) + " reviews from " + url);

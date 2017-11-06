@@ -10,7 +10,7 @@ public class ReviewsPageParser extends PageParser{
         super(url);
     }
 
-    public int[] getStars(CSVWriter writer) throws IOException {
+    public int[] reviewsToCSV(CSVWriter writer) throws IOException {
         Document doc = Jsoup.connect(url).get();
         int[] returned = {0, 0};
         Elements reviews = doc.select("article.pp-review-i");
